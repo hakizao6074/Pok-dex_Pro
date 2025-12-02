@@ -16,7 +16,7 @@ async function criarCards() {
 			else return "";
 		}
 
-		titulo.textContent = `Tipo: ${traduzir(tipo).toUpperCase()}`;
+		titulo.textContent = `${traduzir().toUpperCase()}`;
 		titulo.classList.add("titulo-tipos");
 		container.appendChild(titulo);
 
