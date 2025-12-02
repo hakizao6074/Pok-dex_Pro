@@ -46,13 +46,19 @@ body {
 	border-radius: 10px;
 	background-color: var(--card-background-color);
 
-	h3 {
-		color: var(--text-color);
-	}
-
 	&:hover {
 		background-color: var(--card-background-hover);
 	}
+
+	h4 {
+		text-align: left;
+	}
+}
+
+.card h4,
+.card h3 {
+	cursor: default;
+	color: var(--text-color);
 }
 
 .card img {

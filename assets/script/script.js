@@ -36,9 +36,10 @@ async function criarCards() {
 			card.classList.add("card");
 
 			card.innerHTML = `
-	<img src="${det.sprites.front_default}">
-	<h3>${det.name}</h3>
-      `;
+			<h4>#${det.id}</h4>
+			<img src="${det.sprites.front_default}">
+			<h3>${det.name}</h3>
+		      `;
 
 			area.appendChild(card);
 		}
