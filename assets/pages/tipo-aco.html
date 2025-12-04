@@ -7,7 +7,57 @@
 		<link href="../style/aco/style.css" rel="stylesheet">
 	</head>
 	<body>
-		<div id="container"></div>
-		<script src="../script/aco.js"></script>
+		<header>
+			<section class="left">
+				<a href="../../index.html">
+					<img src="../imgs/pokemon-logo/pokemon-logo.png" alt="pokemon logo">
+				</a>
+			</section>
+			<section class="center">
+				<nav>
+					<a href="../../index.html" class="tag">
+						<h2>Home</h2>
+					</a>
+					<a href="./tipo-pedra.html" class="tag">
+						<h2>Rock</h2>
+					</a>
+					<a href="./tipo-fantasma.html" class="tag">
+						<h2>Ghost</h2>
+					</a>
+					<a href="./tipo-dragao.html" class="tag">
+						<h2>Dragon</h2>
+					</a>
+					<a href="#" class="tag">
+						<h2>Steel</h2>
+					</a>
+				</nav>
+			</section>
+			<section class="right">
+				<nav>
+					<label class="switch">
+						<input id="tema" type="checkbox">
+						<span class="slider"></span>
+					</label>
+					<div class="icons">
+					<a href="">
+						<img src="../imgs/icones/lupa.png" alt="lupa icon">
+					</a>
+					<a href="">
+						<img src="../imgs/icones/login.png" alt="login icon">
+					</a>
+					</div>
+				</nav>
+			</section>
+		</header>
+
+		<main>
+			<section class="api">
+				<div id="container"></div>
+				<div id="d-container"></div>
+			</section>
+		</main>
+
+		<script src="../script/aco.js"></script><!-- js API -->
+		<script src="../script/tema.js"></script><!-- js tema -->
 	</body>
 </html>
