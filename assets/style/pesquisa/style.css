@@ -1,0 +1,311 @@
+@import url('../root/style.css');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Roboto Condensed", sans-serif;
+	background-color: var(--background-color);
+}
+
+/*header*/
+header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.left a img {
+	width: 200px;
+	height: 100px;
+}
+
+.center nav {
+	display: flex;
+	gap: 20px;
+}
+
+.center nav a {
+	text-decoration: none;
+}
+
+.center nav a h2 {
+	color: var(--text-color);
+}
+
+.right {
+	margin-right: 8px;
+}
+
+.right nav,
+.right nav .icons{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+
+.right nav a img {
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+	background-color: var(--card-background-color);
+	border-radius: 10px;
+	padding: 5px;
+	width: 40px;
+	height: 40px;
+}
+
+/*batao para mudar o tema do site*/
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 50px;
+	height: 25px;
+}
+
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.slider {
+	position: absolute;
+	cursor: pointer;
+	background-color: #ccc;
+	border-radius: 25px;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	transition: 0.3s;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 20px;
+	width: 20px;
+	left: 3px;
+	bottom: 2.5px;
+	background-color: black;
+	border-radius: 50%;
+	transition: 0.3s;
+}
+
+/* quando ativado */
+input:checked + .slider {
+	background-color: #999;
+}
+
+input:checked + .slider:before {
+	transform: translateX(25px);
+}
+
+
+/*alterar as div/imgs/textos q o js criou com a API*/
+.titulo-tipos {
+	color: var(--text-color);
+}
+
+.grupo-tipo {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 10px;
+	justify-content: space-evenly;
+	gap: 20px;
+}
+
+.card {
+	width: 150px;
+	padding: 10px;
+	text-align: center;
+	border: 1px solid var(--card-border-color);
+	border-radius: 10px;
+	background-color: var(--card-background-color);
+	transition: box-shadow 0.4s ease, transform 0.4s;
+	transform-style: preserve-3d;
+	cursor: pointer;
+
+	&:hover {
+		box-shadow: 0 20px 30px rgba(0, 0, 0, 0.25);
+		transform: translateY(-10px) rotateX(6deg) rotateY(-8deg) scale(1.02);
+		background-color: var(--card-background-hover);
+	}
+
+	h4 {
+		text-align: left;
+	}
+}
+
+.card h4,
+.card h3 {
+	cursor: default;
+	color: var(--text-color);
+}
+
+.card img {
+	width: 120px;
+	transform: translateZ(20px) scale(1.1);	
+	pointer-events: none;
+}
+
+
+/* main */
+main {
+	padding: 25px;
+}
+
+.pesq {
+	display: flex;
+	justify-content: center;
+}
+
+.barra img {
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+}
+
+.barra {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	gap: 10px;
+	margin-bottom: 10px;
+	padding: 14px;
+	background: var(--card-background-color);
+	width: 270px;
+	height: auto;
+	border-radius: 13px;
+	border: 1px solid var(--card-border-color);
+}  
+
+.barra input {
+	background: none;
+	color: var(--text-color);
+	border: none;
+	height: 20px;
+	width: 90%;
+	font-size: large;
+}
+
+.barra input:focus {
+	outline: none;
+	border: none;
+}
+
+main .api {
+	border: 2px solid var(--card-border-color);
+	border-radius: 13px;
+}
+
+/* card do pokemon expecifico */
+#d-container h4,
+#d-container h3, 
+#d-container p {
+	cursor: default;
+	color: var(--text-color);
+}
+
+#d-container h4,
+#d-container p {
+	font-size: large;
+}
+
+#d-container h3 {
+	font-size: xx-large;
+}
+
+#d-container img {
+	width: 100%;
+	max-width: 400px;
+	height: auto;
+	object-fit: contain;
+}
+
+#d-container button {
+	border: none;
+	padding: 6px;
+	border-radius: 50%;
+	width: 70px;
+	height: 70px;
+	background-color: #333;
+	color:  white;
+}
+
+#d-container button:hover {
+	cursor: pointer;
+	background-color: #444;
+}
+
+#d-container {
+	text-align: center;
+	overflow: hidden;
+}
+
+/* header - media */
+@media screen and (max-width: 800px) {
+	.left a img {
+		width: 100px;
+		height: 50px;
+	}
+
+}
+
+
+@media screen and (max-width: 700px) {
+	.center nav a h2 {
+		font-size: large;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	.center {
+		width: auto;
+		overflow: hidden;
+		margin-right: 3px;
+		margin-left: 3px;
+	}
+
+	.center nav {
+		overflow-x: auto;
+	}
+
+	.center nav a:nth-child(5) h2 {
+		box-shadow: none;
+		color: var(--barra-selecao);
+	}
+
+	.tag {
+		padding: 4px 14px;
+		background: var(--card-background-color);
+		border-radius: 20px;
+		white-space: nowrap;
+		gap: 0px;
+	}
+
+	.right nav a img {
+		padding: 3px;
+		width: 30px;
+		height: 30px;
+	}
+
+	.switch {
+		width: 23px;
+		height: 45px;
+	}
+
+	.slider:before {
+		height: 17px;
+		width: 17px;
+		left: 3px;
+		bottom: 3.2px;
+	}
+
+	input:checked + .slider:before {
+		transform: translateY(-21px);
+	}
+}
