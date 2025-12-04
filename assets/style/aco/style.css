@@ -118,6 +118,46 @@ main .api {
 	border-radius: 13px;
 }
 
+.player {
+	display: flex;
+	justify-content: center;
+}
+
+.audio-player {
+	width: 360px;
+	background: var(--card-background-color);
+	border-radius: 13px;
+	color: var(--text-color);
+	padding: 6px;
+	margin-bottom: 10px;
+}
+
+.controls {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+}
+
+.btn {
+	width: 30px;
+	height: 30px;
+	border: none;
+	border-radius: 50%;
+	background: var(--card-border-color);
+	color: white;
+	font-size: 18px;
+	cursor: pointer;
+}
+
+input[type="range"] {
+	cursor: pointer;
+}
+
+.volume {
+	width: 60px;
+}
+
 /*alterar as div/imgs/textos q o js criou com a API*/
 .titulo-tipos {
 	color: var(--text-color);
@@ -271,5 +311,15 @@ main .api {
 
 	input:checked + .slider:before {
 		transform: translateY(-21px);
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.audio-player {
+		width: 200px;
+	}
+
+	.controls {
+		flex-direction: column;
 	}
 }
