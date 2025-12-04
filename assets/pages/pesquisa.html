@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title></title>
-		<link href="../style/aco/style.css" rel="stylesheet">
+		<title>Search</title>
+		<link href="../style/pesquisa/style.css" rel="stylesheet">
 	</head>
 	<body>
 		<header>
@@ -27,7 +27,7 @@
 					<a href="./tipo-dragao.html" class="tag">
 						<h2>Dragon</h2>
 					</a>
-					<a href="#" class="tag">
+					<a href="./tipo-aco.html" class="tag">
 						<h2>Steel</h2>
 					</a>
 				</nav>
@@ -39,9 +39,6 @@
 						<span class="slider"></span>
 					</label>
 					<div class="icons">
-					<a href="./pesquisa.html">
-						<img src="../imgs/icones/lupa.png" alt="lupa icon">
-					</a>
 					<a href="">
 						<img src="../imgs/icones/login.png" alt="login icon">
 					</a>
@@ -51,13 +48,19 @@
 		</header>
 
 		<main>
+			<section class="pesq">
+				<div class="barra">
+					<img onclick="criarCards()" src="../imgs/icones/lupa.png" alt="lupa">
+					<input type="text" placeholder="Search" id="text">
+				</div>	
+			</section>
 			<section class="api">
 				<div id="container"></div>
 				<div id="d-container"></div>
 			</section>
 		</main>
 
-		<script src="../script/aco.js"></script><!-- js API -->
-		<script src="../script/tema.js"></script><!-- js tema -->
+		<script src="../script/pesquisa.js"></script>
+		<script src="../script/tema.js"></script>
 	</body>
 </html>
