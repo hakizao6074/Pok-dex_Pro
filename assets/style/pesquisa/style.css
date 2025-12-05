@@ -30,6 +30,10 @@ header {
 
 .center nav a {
 	text-decoration: none;
+	
+	&:hover {
+		list-style: unset;
+	}
 }
 
 .center nav a h2 {
@@ -231,7 +235,8 @@ main {
 }
 
 input[type="range"] {
-    cursor: pointer;
+	flex: 1;
+	cursor: pointer;
 }
 
 .volume {

@@ -54,14 +54,12 @@
 			<section class="player">
 
 				<div class="audio-player">
-					<audio id="player">
-						<source src="../audio/YTDown.com_YouTube_ETERNA-FOREST-Remastered-Pokemon-Brillia_Media_3NadcXHFB-w_007_48k.m4a" type="audio/mpeg">
-					</audio>
+					<audio id="player" src="../audio/YTDown.com_YouTube_ETERNA-FOREST-Remastered-Pokemon-Brillia_Media_3NadcXHFB-w_007_48k.m4a" preload="metadata"></audio>
 
 					<div class="controls">
 						<button id="play-pause" class="btn">▶</button>
 
-						<input type="range" id="seek" value="0" min="0" max="100">
+						<input type="range" id="seek" value="0">
 
 						<div class="media">
 
@@ -74,8 +72,8 @@
 			</section>
 
 			<section class="api">
-				<div id="container"></div>
-				<div id="d-container"></div>
+				<div id="container"></div> <!-- div para criar os cards -->		
+				<div id="d-container"></div> <!-- div para mostrar so infos do card (coso um dos cards seja clicado) -->
 			</section>
 		</main>
 
