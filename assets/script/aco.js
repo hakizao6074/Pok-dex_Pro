@@ -7,32 +7,33 @@ async function criarCards() {
 
 
 		const resp = await fetch(`https://pokeapi.co/api/v2/type/steel`);
-		const data = await resp.json();
+		const data = await resp.json(); // pega as info dos pokemons tipo "aço"
 
-		const lista = data.pokemon.slice(0, 30);
+		const lista = data.pokemon.slice(0, 30); // a quantidade de pokemons q vai aparecer, no caso 30
 
-		const area = document.createElement("div");
+		const area = document.createElement("div"); // cria uma div com class=grupo-tipo
 		area.classList.add("grupo-tipo");
 
 		for (const p of lista) {
-			const resp2 = await fetch(p.pokemon.url);
+			const resp2 = await fetch(p.pokemon.url); // para cada pokemon ira pegar as infos da API principal
 			const det = await resp2.json();
 
-			const card = document.createElement("div");
+			const card = document.createElement("div"); // cria um div com class=card
 			card.classList.add("card");
 
 			card.innerHTML = `
 			<h4>#${det.id}</h4>
 			<img src="${det.sprites.front_default}">
 			<h3>${det.name}</h3>
-		      `;
+		      `; // infos q vai aparecer no cards
 
 			card.addEventListener("click", () => {
 				container.innerHTML = ""; // limpar tudo
 
-				const card2 = document.createElement("div");
+				const card2 = document.createElement("div"); // cria uma div com class=card2
 				card2.classList.add("card2");
 
+				// pega as infos da API
 				const hp = det.stats.find(s => s.stat.name === "hp").base_stat;
 				const attack = det.stats.find(s => s.stat.name === "attack").base_stat;
 				const defense = det.stats.find(s => s.stat.name === "defense").base_stat;
@@ -54,22 +55,22 @@ async function criarCards() {
 				<button id="back"><</button>
 				<br>
 				<br>
-			      `;
+			      `; // infos do card2
 
-				dcontainer.appendChild(card2);
+				dcontainer.appendChild(card2); // dentro da div dcontainer criar o card2
 
 				const back = document.getElementById("back");
 
 				back.addEventListener("click", () => {
 					criarCards();
-				});
+				}); // caso o botao for clicado rodar o codigo tudo de novo
 
-			})
+			}); // in cada card criar um evento de click
 
-			area.appendChild(card);
-		}
+			area.appendChild(card); // dentro da "grupo-tipo" criar os cards
+		} // vai criar a quantidade de cards q vc colocou, no caso 30
 
-		container.appendChild(area);
+		container.appendChild(area); // dentro da div container criar a "grupo-tipo"
 	}
 
 // executa assim que a pagina carregar
