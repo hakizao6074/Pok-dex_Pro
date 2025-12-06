@@ -48,12 +48,36 @@ async function criarCards() {
 				<p><strong>Hp:</strong> ${hp}</p>
 				<p><strong>Attack:</strong> ${attack}</p>
 				<p><strong>Defense:</strong> ${defense}</p>
-				<p><strong>Type:</strong><br>${data.types[0].type.name} | ${data.types[1].type.name}</p>
+				<p><strong>Type:</strong></p>
+				<ul>
+					<li>${data.types[0].type.name}</li>
+					<li>${data.types[1] ? data.types[1].type.name : ""}</li>
+				</ul>
 				<br>
 				<button id="back"><</button>
 				<br>
 				<br>
-			      `; // info do card2
+			      `; // infos do card2
+
+				function color(det) {
+					const types = det.types.map(t => t.type.name); // pega o nome do(s) tipos
+					const listItems = card2.querySelectorAll("ul li"); // seleciona os <li> do card2
+
+					listItems.forEach((li, index) => {
+						li.style.background = `var(--${types[index]}-type-background)`; // troca o background de acordo com o tipo
+
+						if (types[index] == "flying" ||
+						types[index] == "ice" ||
+						types[index] == "normal" ||
+						types[index] == "electirc" ||
+						types[index] == "grass" ||
+						types[index] == "ground") { li.style.color = "var(--type-color-back)"} // caso o typo do pokemon for "ice", por exemplo, a cor do texto sera preta
+						else {li.style.color = "var(--type-color-white)"}; // qualquer outro tipo o texto sera branco
+					});
+
+				};
+
+				color(data); // executa a funçao
 
 				dcontainer.appendChild(card2); // dentro da div dcontainer ira criar o card2
 
