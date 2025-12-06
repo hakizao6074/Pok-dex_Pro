@@ -287,6 +287,22 @@ main .api {
 	background-color: #444;
 }
 
+.card2 ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.card2 ul li {
+	display: inline-block;
+	padding: 6px 12px;
+	margin: 4px;
+	border-radius: 8px;
+	font-weight: bold;
+	cursor: default;
+	width: auto;
+}
+
 #d-container {
 	text-align: center;
 	overflow: hidden;
