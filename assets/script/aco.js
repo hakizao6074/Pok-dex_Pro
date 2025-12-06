@@ -51,6 +51,7 @@ async function criarCards() {
 				<p><strong>Hp:</strong> ${hp}</p>
 				<p><strong>Attack:</strong> ${attack}</p>
 				<p><strong>Defense:</strong> ${defense}</p>
+				<p><strong>Type:</strong><br>${det.types[0].type.name} | ${det.types[1].type.name}</p>
 				<br>
 				<button id="back"><</button>
 				<br>

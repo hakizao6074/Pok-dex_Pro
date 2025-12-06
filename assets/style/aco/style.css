@@ -151,6 +151,7 @@ main .api {
 }
 
 input[type="range"] {
+	flex: 1;
 	cursor: pointer;
 }
 
