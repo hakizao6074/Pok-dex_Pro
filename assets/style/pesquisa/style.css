@@ -168,37 +168,41 @@ main {
 	align-items: center;
 }
 
-.barra img {
-	width: 20px;
-	height: 20px;
-	cursor: pointer;
-}
-
 .barra {
 	display: flex;
 	align-items: center;
-	justify-content: space-around;
-	gap: 10px;
-	padding: 14px;
-	background: var(--card-background-color);
-	width: 270px;
-	height: auto;
-	border-radius: 13px;
-	border: 1px solid var(--card-border-color);
+	justify-content: center;
+	gap: 3px;
 }  
 
+.barra input,
+.barra button {
+	border: 1px solid var(--card-border-color);
+	background: var(--card-background-color);
+}
+
 .barra input {
-	background: none;
+	border-radius: 0 13px 13px 0;
 	color: var(--text-color);
-	border: none;
-	height: 20px;
-	width: 90%;
+	width: 80%;
+	padding: 10px;
 	font-size: large;
+}
+
+.barra button {
+	border-radius: 13px 0 0 13px;
+	width: 40px;
+	height: 44px;
+	cursor: pointer;
+
+	img {
+		width: 25px;
+		height: auto;
+	}
 }
 
 .barra input:focus {
 	outline: none;
-	border: none;
 }
 
 .bar {
@@ -342,11 +346,6 @@ main .api {
 
 	.center nav {
 		overflow-x: auto;
-	}
-
-	.center nav a:nth-child(5) h2 {
-		box-shadow: none;
-		color: var(--barra-selecao);
 	}
 
 	.tag {
