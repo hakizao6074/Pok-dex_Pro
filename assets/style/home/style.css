@@ -277,3 +277,52 @@ footer {
 	width: 100%;
 	height: 100px;
 }
+
+@media screen and (max-width: 768px) {
+
+	header {
+		flex-direction: column;
+	}
+
+	main {
+		flex-direction: column;
+		gap: 30px;
+		height: 100%;
+		width: 100%;
+	}
+
+	.Container-all {
+		flex-direction: column;
+		gap: 30px;
+		height: 100%;
+	}
+
+	.News {
+		width: 98%;
+		text-align: center;
+		gap: 30px;
+		padding: 20px;
+		font-size: 12px;
+
+		h1 {
+			font-size: 37px;
+		}
+	}
+
+	.sub-news {
+		width: 70%;
+		gap: 30px;
+		padding: 20px;
+		margin: 20px;
+	}
+
+	.Date {
+		font-size: 10px;
+		align-items: start;
+		justify-content: center;
+	}
+
+	.Titulo-DLCs {
+		font-size: 5px;
+	}
+}
