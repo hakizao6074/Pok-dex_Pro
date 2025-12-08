@@ -6,6 +6,98 @@
 	box-sizing: border-box;
 }
 
+header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.left a img {
+	width: 200px;
+	height: 100px;
+}
+
+.center nav {
+	display: flex;
+	gap: 20px;
+}
+
+.center nav a {
+	text-decoration: none;
+	font-weight: 500;
+}
+
+.center nav a p {
+	color: var(--text-color);
+}
+
+.center nav a:nth-child(1) p {
+	box-shadow: 0 6px 0 0 var(--barra-selecao);
+}
+
+.center nav a:hover {
+	box-shadow: 0 6px 0 0 var(--barra-selecao);
+}
+
+.right {
+	margin-right: 8px;
+}
+
+.right nav,
+.right nav .icons{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+
+.right nav a img {
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+	background-color: var(--card-background-color);
+	border-radius: 10px;
+	padding: 5px;
+	width: 40px;
+	height: 40px;
+}
+
+/*batao para mudar o tema do site*/
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 50px;
+	height: 25px;
+}
+
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.slider {
+	position: absolute;
+	cursor: pointer;
+	background-color: #ccc;
+	border-radius: 25px;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	transition: 0.3s;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 20px;
+	width: 20px;
+	left: 3px;
+	bottom: 2.5px;
+	background-color: black;
+	border-radius: 50%;
+	transition: 0.3s;
+}
+
 body {
 	background-color: var(--background-color);
 }
