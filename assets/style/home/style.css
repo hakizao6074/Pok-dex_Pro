@@ -173,7 +173,7 @@ main {
 }
 .Perfil {
 	background-color: rgb(255, 255, 255);
-	width: 50%;
+	width: 250px;
 	height: 10%;
 	display: flex;
 	gap: 20px;
@@ -189,9 +189,9 @@ main {
 
 .Date {
 	width: 30%;
-	height: 40%;
+	height: 30%;
 	display: flex;
-	justify-content: right;
+	justify-content: center;
 	align-items: center;
 	font-size: 23px;
 	font-weight: 300;
