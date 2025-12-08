@@ -4,10 +4,81 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title></title>
-		<link href="../style/fantasma/style.css" rel="stylesheet">
+		<link href="../style/aco/style.css" rel="stylesheet">
 	</head>
 	<body>
-		<div id="container"></div>
-		<script src="../script/fantasma.js"></script>
-</body>
+		<header>
+			<section class="left">
+				<a href="../../index.html">
+					<img src="../imgs/pokemon-logo/pokemon-logo.png" alt="pokemon logo">
+				</a>
+			</section>
+			<section class="center">
+				<nav>
+					<a href="../../index.html" class="tag">
+						<h2>Home</h2>
+					</a>
+					<a href="./tipo-pedra.html" class="tag">
+						<h2>Rock</h2>
+					</a>
+					<a href="./tipo-fantasma.html" class="tag">
+						<h2>Ghost</h2>
+					</a>
+					<a href="./tipo-dragao.html" class="tag">
+						<h2>Dragon</h2>
+					</a>
+					<a href="#" class="tag">
+						<h2>Steel</h2>
+					</a>
+				</nav>
+			</section>
+			<section class="right">
+				<nav>
+					<label class="switch">
+						<input id="tema" type="checkbox">
+						<span class="slider"></span>
+					</label>
+					<div class="icons">
+					<a href="./pesquisa.html">
+						<img src="../imgs/icones/lupa.png" alt="lupa icon">
+					</a>
+					<a href="">
+						<img src="../imgs/icones/login.png" alt="login icon">
+					</a>
+					</div>
+				</nav>
+			</section>
+		</header>
+
+		<main>
+			<section class="player">
+
+				<div class="audio-player">
+					<audio id="player" src="../audio/pokemon-music-1.mp3" preload="metadata"></audio>
+
+					<div class="controls">
+						<button id="play-pause" class="btn">▶</button>
+
+						<input type="range" id="seek" value="0">
+
+						<div class="media">
+
+							<span id="time">0:00 / 0:00</span>
+
+							<input type="range" id="volume" min="0" max="1" step="0.01" value="1" class="volume">
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="api">
+				<div id="container"></div> <!-- div para criar os cards -->		
+				<div id="d-container"></div> <!-- div para mostrar so infos do card (coso um dos cards seja clicado) -->
+			</section>
+		</main>
+
+		<script src="../script/fantasma.js"></script><!-- js API -->
+		<script src="../script/tema.js" defer></script><!-- js tema. o "defer" serve para o js ser carregado dps do site -->
+		<script src="../script/musica.js"></script><!-- musica -->
+	</body>
 </html>
