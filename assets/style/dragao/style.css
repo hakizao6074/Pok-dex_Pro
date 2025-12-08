@@ -118,7 +118,7 @@ body {
 	text-align: center;
 	border: 1px solid var(--card-border-color);
 	border-radius: 10px;
-	background-color: var(--card-background-color);
+	background: var(--background-card-dragao);
 	transition: box-shadow 0.4s ease, transform 0.4s;
 	transform-style: preserve-3d;
 	cursor: pointer;
@@ -126,7 +126,7 @@ body {
 	&:hover {
 		box-shadow: 0 20px 30px rgba(0, 0, 0, 0.25);
 		transform: translateY(-10px) rotateX(6deg) rotateY(-8deg) scale(1.02);
-		background-color: var(--card-background-hover);
+		background: var(--background-card-hover);
 	}
 
 	h4 {

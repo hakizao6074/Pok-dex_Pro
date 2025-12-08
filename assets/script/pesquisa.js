@@ -69,7 +69,7 @@ async function criarCards() {
 						if (types[index] == "flying" ||
 						types[index] == "ice" ||
 						types[index] == "normal" ||
-						types[index] == "electirc" ||
+						types[index] == "electric" ||
 						types[index] == "dragon" ||
 						types[index] == "grass" ||
 						types[index] == "ground") { li.style.color = "var(--type-color-back)"} // caso o typo do pokemon for "ice", por exemplo, a cor do texto sera preta
