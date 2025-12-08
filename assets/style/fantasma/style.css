@@ -49,7 +49,7 @@ header {
 	opacity: 0.9;
 }
 
-.center nav a:nth-child(5) h2 {
+.center nav a:nth-child(3) h2 {
 	box-shadow: 0 6px 0 0 var(--barra-selecao);
 }
 
