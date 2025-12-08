@@ -4,7 +4,7 @@ async function criarCards() {
 		const resp = await fetch(`https://pokeapi.co/api/v2/type/dragon`);
 		const data = await resp.json();
 
-		const lista = data.pokemon.slice(0, 12);
+		const lista = data.pokemon.slice(0, 30);
 
 		const area = document.createElement("div");
 		area.classList.add("grupo-tipo");
@@ -28,7 +28,6 @@ async function criarCards() {
 		container.appendChild(area);
 	}
 
-// executa assim que a pagina carregar
 criarCards();
 
 

@@ -60,7 +60,6 @@ header {
 	height: 40px;
 }
 
-/*batao para mudar o tema do site*/
 .switch {
 	position: relative;
 	display: inline-block;
@@ -102,7 +101,6 @@ body {
 	background-color: var(--background-color);
 }
 
-/*alterar as div/imgs/textos q o js criou com a API*/
 .titulo-tipos {
 	color: var(--text-color);
 }
@@ -148,5 +146,71 @@ body {
 	transform: translateZ(20px) scale(1.1);	
     pointer-events: none;
 }
+
+.api {
+	border: 2px solid var(--card-border-color);
+	border-radius: 13px;
+	margin: 10px;
+}
+
+#d-container h4,
+#d-container h3, 
+#d-container p {
+	cursor: default;
+	color: var(--text-color);
+}
+
+#d-container h4,
+#d-container p {
+	font-size: large;
+}
+
+#d-container h3 {
+	font-size: xx-large;
+}
+
+#d-container img {
+	width: 100%;
+	max-width: 400px;
+	height: auto;
+	object-fit: contain;
+}
+
+#d-container button {
+	border: none;
+	padding: 6px;
+	border-radius: 50%;
+	width: 70px;
+	height: 70px;
+	background-color: #333;
+	color:  white;
+}
+
+#d-container button:hover {
+	cursor: pointer;
+	background-color: #444;
+}
+
+.card2 ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.card2 ul li {
+	display: inline-block;
+	padding: 6px 12px;
+	margin: 4px;
+	border-radius: 8px;
+	font-weight: bold;
+	cursor: default;
+	width: auto;
+}
+
+#d-container {
+	text-align: center;
+	overflow: hidden;
+}
+
 
 
