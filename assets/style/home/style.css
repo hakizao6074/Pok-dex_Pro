@@ -297,6 +297,59 @@ footer {
 	height: 100px;
 }
 
+
+section {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.mom {
+	width: 70%;
+	height: 200px;
+	background-color: black;
+	border-radius: 25px;
+	border: solid 3px rgb(255, 238, 0);
+	color: rgb(255, 255, 255);
+	display: flex;
+	align-items: center;
+	font-style: italic;
+	font-size: 25px;
+	gap: 10px;
+	padding: 40px;
+	font-weight: 200;
+	justify-content: space-between;
+
+	.func {
+		font-size: 35px;
+		font-style: normal;
+		font-weight: 100;
+	}
+}
+
+.img-picachu {
+	display: flex;
+	align-items: center;
+	justify-content:right;
+	width: 50%;
+}
+
+.Conteudo-1 {
+	width: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 768px) {
 
 	header {
