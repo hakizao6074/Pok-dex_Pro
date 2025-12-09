@@ -74,6 +74,12 @@
 
 	/* tipo escuro */
 	--dark-type-background: #171825;
+
+	/* Tentativa de fade */
+	--bg-dark:   #000000;
+    --bg-mid:    #3d0050;  /* roxo escuro intermediário */
+    --bg-end:    #b200ff;
+
 }
 
 /*modo escuro*/

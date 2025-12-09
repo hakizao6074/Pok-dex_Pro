@@ -21,6 +21,11 @@ header {
 .left a img {
 	width: 200px;
 	height: 100px;
+	transition: 0.3s ease;
+}
+.left a img:hover {
+	transform: scale(1.12);
+	filter: brightness(1.2);
 }
 
 .center nav {
@@ -30,6 +35,11 @@ header {
 
 .center nav a {
 	text-decoration: none;
+	transition: 0.3s ease;
+}
+
+.center nav a:hover{
+	transform: translateY(-3px);
 }
 
 .center nav a h2 {
@@ -66,6 +76,12 @@ header {
 	padding: 5px;
 	width: 40px;
 	height: 40px;
+	cursor: pointer;
+	transition: transform 0.3s ease;
+}
+
+.right nav a img:hover {
+	transform: scale(1.1);
 }
 
 /*batao para mudar o tema do site*/
@@ -118,11 +134,19 @@ input:checked + .slider:before {
 /* main */
 main {
 	padding: 25px;
+		background: linear-gradient(
+		to bottom,
+		var(--bg-dark) 0%,
+        var(--bg-mid) 40%,
+        var(--bg-end) 100%
+	);
+
 }
 
 main .api {
 	border: 2px solid var(--main-border-color);
 	border-radius: 13px;
+	background-color: var(--card-background-color);
 }
 
 .player {
@@ -181,6 +205,7 @@ input[type="range"] {
 	padding: 10px;
 	justify-content: space-evenly;
 	gap: 20px;
+
 }
 
 .card {
