@@ -76,9 +76,10 @@
 	--dark-type-background: #171825;
 
 	/* Tentativa de fade */
-	--bg-dark:   #000000;
-    --bg-mid:    #3d0050;  /* roxo escuro intermediário */
-    --bg-end:    #b200ff;
+	--background-fade-fantasma: linear-gradient( to top, #000000 0%, #3d0050 40%, #b200ff 100%);
+	--background-fade-pedra: linear-gradient(to top, #2a2410 0%, #6b5a1f 40%, #f7de3f 100%);
+	--background-fade-dragao: linear-gradient(to top, #1a2a3a 0%, #2d5a7f 40%, #53a4cf 100%);
+	--background-fade-aco: linear-gradient(to top, #1f2a30 0%, #4a6b7a 40%, #9eb7b8 100%);
 
 }
 
@@ -151,6 +152,12 @@
 
 	/* tipo lutador */
 	--fighting-type-background: #d56723;
+
+	/* Tentativa de fade */
+	--backgound-fade-fantasma: linear-gradient( to top, #000000 0%, #3d0050 40%, #b200ff 100%);
+	--backgound-fade-pedra: linear-gradient(to top, #2a2410 0%, #6b5a1f 40%, #f7de3f 100%);
+	--backgound-fade-dragao: linear-gradient(to top, #1a2a3a 0%, #2d5a7f 40%, #53a4cf 100%);
+	--backgound-fade-aco: linear-gradient(to top, #1f2a30 0%, #4a6b7a 40%, #9eb7b8 100%);
 }
 
 /*importe com "@import url('o caminho')" dentro dos outros arquivos css*/
