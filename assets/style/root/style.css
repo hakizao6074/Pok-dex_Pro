@@ -20,6 +20,9 @@
 	--barra-selecao: rgba(61, 216, 255, .8);
 	--meucard-background: rgba(150, 0, 255, 0.15);
 	--meucard-background2: rgba(60, 0, 90, 0.30);
+	--color-btn: #333333;
+	--color-btn-hover: #444;
+	--text-btn: white;
 
 	/* color stats */
 	--stat-color-red-hp: #ff5959;
@@ -92,12 +95,6 @@
 
 /*modo escuro*/
 .darkmode{
-	/* cores dos cards */
-	--border-card-pedra: linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);
-	--border-card-aco: #9eb7b8;
-	--border-card-fantasma: #7b62a3;
-	--border-card-dragao: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
-
 	/* site */
 	--status-box-shadow: rgba(255, 255, 255, 1);
 	--background-color-line: #979797e2;
@@ -108,65 +105,10 @@
 	--card-border-color: blue;
 	--card-background-hover: #464646;
 	--barra-selecao: rgba(61, 216, 255, .8);
-
-	/* pokemons */
-	--type-color-white: #fff;
-	--type-color-black: #212121;
-
-	/* tipo planta */
-	--grass-type-background: #9bcc50;
-
-	/* tipo veneno */
-	--poison-type-background: #b57fc9;
-
-	/* tipo fogo */
-	--fire-type-background: #fd7d24;
-
-	/* tipo agua/gelo */
-	--water-type-background: #4592c4;
-	--ice-type-background: #4592c4;
-
-	/* tipo pedra */
-	--rock-type-background: #ab9842;
-
-	/* tipo chao */
-	--ground-type-background: linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);
-
-	/* tipo voador */
-	--flying-type-background: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
-
-	/* tipo praga */
-	--bug-type-background: #729f3f;
-
-	/* tipo eletrico */
-	--electric-type-background: #eed535;
-
-	/* tipo psiquico */
-	--psychic-type-background: #f366b9;
-
-	/* tipo fada */
-	--fairy-type-background: #fdb9e9;
-
-	/* tipo dragao */
-	--dragon-type-background: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
-
-	/* tipo aco */
-	--steel-type-background: #9eb7b8;
-
-	/* tipo fantasma */
-	--ghost-type-background: #7b62a3;
-
-	/* tipo normal */
-	--normal-type-background: #a4acaf;
-
-	/* tipo lutador */
-	--fighting-type-background: #d56723;
-
-	/* Tentativa de fade */
-	--backgound-fade-fantasma: linear-gradient( to top, #000000 0%, #3d0050 40%, #b200ff 100%);
-	--backgound-fade-pedra: linear-gradient(to top, #2a2410 0%, #6b5a1f 40%, #f7de3f 100%);
-	--backgound-fade-dragao: linear-gradient(to top, #1a2a3a 0%, #2d5a7f 40%, #53a4cf 100%);
-	--backgound-fade-aco: linear-gradient(to top, #1f2a30 0%, #4a6b7a 40%, #9eb7b8 100%);
+	--color-btn: white;
+	--color-btn-hover: #EBE7E5;
+	--text-btn: #333333;
+	/* oq nao vai tracar de cor nao precisa rescrever aqui */
 }
 
 /*importe com "@import url('o caminho')" dentro dos outros arquivos css*/

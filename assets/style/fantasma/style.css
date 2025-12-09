@@ -9,6 +9,7 @@
 body {
 	font-family: "Roboto Condensed", sans-serif;
 	background-color: var(--background-color);
+	height: 89vh;
 }
 
 /*header*/
@@ -135,6 +136,7 @@ input:checked + .slider:before {
 main {
 	padding: 25px;
 	background: var(--background-fade-fantasma);
+	height: 100%;
 }
 
 main .api {
@@ -284,13 +286,13 @@ input[type="range"] {
 	border-radius: 50%;
 	width: 70px;
 	height: 70px;
-	background-color: #333;
-	color:  white;
+	background-color: var(--color-btn);
+	color:  var(--text-btn);
 }
 
 #d-container button:hover {
 	cursor: pointer;
-	background-color: #444;
+	background-color: var(--color-btn-hover);
 }
 
 .card2 {

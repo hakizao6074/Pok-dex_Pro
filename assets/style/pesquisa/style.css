@@ -324,13 +324,13 @@ main .api {
 	border-radius: 50%;
 	width: 70px;
 	height: 70px;
-	background-color: #333;
-	color:  white;
+	background-color: var(--color-btn);
+	color:  var(--text-btn);
 }
 
 #d-container button:hover {
 	cursor: pointer;
-	background-color: #444;
+	background-color: var(--color-btn-hover);
 }
 
 .line {
