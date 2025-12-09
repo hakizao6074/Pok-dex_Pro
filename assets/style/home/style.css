@@ -535,3 +535,18 @@ section {
 	}
 }
 
+	.Music {
+		background-image: url('../../imgs/icones/pokeball_743977.png');
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: 30px;
+		width: 30px;
+		border-radius: 100%;
+		transition: transform 0.3s ease;
+		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+	}
+
+	.Music:hover {
+		transform: scale(1.1);
+		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.577);
+	}
