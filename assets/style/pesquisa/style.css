@@ -21,11 +21,29 @@ header {
 .left a img {
 	width: 200px;
 	height: 100px;
+	transition: 0.3s ease;
+}
+.left a img:hover {
+	transform: scale(1.12);
+	filter: brightness(1.2);
 }
 
 .center nav {
 	display: flex;
 	gap: 20px;
+}
+
+.center nav a {
+	text-decoration: none;
+	transition: 0.3s ease;
+}
+
+.center nav a:hover{
+	transform: translateY(-3px);
+}
+
+.center nav a h2 {
+	color: var(--text-color);
 }
 
 .center nav a:nth-child(1) h2:hover,
@@ -34,18 +52,6 @@ header {
 .center nav a:nth-child(4) h2:hover,
 .center nav a:nth-child(5) h2:hover {
 	box-shadow: 0 6px 0 0 var(--barra-selecao);
-}
-
-.center nav a {
-	text-decoration: none;
-
-	&:hover {
-		list-style: unset;
-	}
-}
-
-.center nav a h2 {
-	color: var(--text-color);
 }
 
 .right {
@@ -67,6 +73,12 @@ header {
 	padding: 5px;
 	width: 40px;
 	height: 40px;
+	cursor: pointer;
+	transition: transform 0.3s ease;
+}
+
+.right nav a img:hover {
+	transform: scale(1.1);
 }
 
 /*batao para mudar o tema do site*/
