@@ -31,13 +31,15 @@ header {
 .center nav a {
 	text-decoration: none;
 	font-weight: 500;
+	
 }
 
-.center nav a p {
+.center nav a h1 {
 	color: var(--text-color);
+	font-size: x-large;
 }
 
-.center nav a:nth-child(1) p {
+.center nav a:nth-child(1) h1 {
 	box-shadow: 0 6px 0 0 var(--barra-selecao);
 }
 
