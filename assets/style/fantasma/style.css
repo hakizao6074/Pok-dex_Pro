@@ -134,13 +134,7 @@ input:checked + .slider:before {
 /* main */
 main {
 	padding: 25px;
-		background: linear-gradient(
-		to bottom,
-		var(--bg-dark) 0%,
-        var(--bg-mid) 40%,
-        var(--bg-end) 100%
-	);
-
+	background: var(--background-fade-fantasma);
 }
 
 main .api {
