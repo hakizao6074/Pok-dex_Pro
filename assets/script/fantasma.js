@@ -9,7 +9,7 @@ async function criarCards() {
 		const resp = await fetch(`https://pokeapi.co/api/v2/type/ghost`);
 		const data = await resp.json(); // pega as info dos pokemons tipo "aço"
 
-		const lista = data.pokemon.slice(0, 30); // a quantidade de pokemons q vai aparecer, no caso 30
+		const lista = data.pokemon.slice(0, 20); // a quantidade de pokemons q vai aparecer, no caso 30
 
 		const area = document.createElement("div"); // cria uma div com class=grupo-tipo
 		area.classList.add("grupo-tipo");
@@ -22,10 +22,35 @@ async function criarCards() {
 			card.classList.add("card");
 
 			card.innerHTML = `
-			<h4>#${det.id}</h4>
 			<img src="${det.sprites.front_default}">
 			<h3>${det.name}</h3>
+			<h4>#${det.id}</h4>
+			<ul>
+				<li>${det.types[0].type.name}</li>
+				<li>${det.types[1] ? det.types[1].type.name : ""}</li>
+			</ul>
 		      `; // infos q vai aparecer no cards
+
+			function color(det) {
+				const types = det.types.map(t => t.type.name); // pega o nome do(s) tipos
+				const listItems = card.querySelectorAll("ul li"); // seleciona os <li> do card2
+
+				listItems.forEach((li, index) => {
+					li.style.background = `var(--${types[index]}-type-background)`; // troca o background de acordo com o tipo
+
+					if (types[index] == "flying" ||
+						types[index] == "ice" ||
+						types[index] == "normal" ||
+						types[index] == "electirc" ||
+						types[index] == "dragon" ||
+						types[index] == "grass" ||
+						types[index] == "ground") { li.style.color = "black"} // caso o typo do pokemon for "ice", por exemplo, a cor do texto sera preta
+					else {li.style.color = "var(--type-color-white)"}; // qualquer outro tipo o texto sera branco
+				});
+
+			};
+
+			color(det); // executa a funçao
 
 			card.addEventListener("click", () => {
 				container.innerHTML = ""; // limpar tudo
@@ -74,8 +99,9 @@ async function criarCards() {
 						types[index] == "ice" ||
 						types[index] == "normal" ||
 						types[index] == "electirc" ||
+						types[index] == "dragon" ||
 						types[index] == "grass" ||
-						types[index] == "ground") { li.style.color = "var(--type-color-back)"} // caso o typo do pokemon for "ice", por exemplo, a cor do texto sera preta
+						types[index] == "ground") { li.style.color = "black"} // caso o typo do pokemon for "ice", por exemplo, a cor do texto sera preta
 						else {li.style.color = "var(--type-color-white)"}; // qualquer outro tipo o texto sera branco
 					});
 
@@ -101,5 +127,6 @@ async function criarCards() {
 
 // executa assim que a pagina carregar
 criarCards();
+
 
 
