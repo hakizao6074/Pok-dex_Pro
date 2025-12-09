@@ -34,6 +34,17 @@ header {
 	
 }
 
+.left a img:hover {
+	transform: scale(1.12);
+	filter: brightness(1.2);
+}
+
+.left a img {
+	width: 200px;
+	height: 100px;
+	transition: 0.3s ease;
+}
+
 .center nav a h1 {
 	color: var(--text-color);
 	font-size: x-large;
@@ -320,12 +331,17 @@ section {
 	padding: 40px;
 	font-weight: 200;
 	justify-content: space-between;
+	transition: transform 0.3s ease;
 
 	.func {
 		font-size: 35px;
 		font-style: normal;
 		font-weight: 100;
 	}
+}
+
+.mom:hover {
+	transform: scale(1.1);
 }
 
 .img-picachu {
@@ -365,6 +381,7 @@ section {
 	justify-content: center;
 	flex-wrap: wrap;
 	padding: 20px;
+
 }
 
 .cards-lucas {
@@ -379,6 +396,7 @@ section {
 	padding: 20px;
 	color: var(--background-color);
 	color: black;
+	transition: transform 0.3s ease;
 
 	img {
 		width: 70px;
@@ -395,6 +413,10 @@ section {
 		font-size: 10px;
 		font-weight: 100;
 	}
+}
+
+.cards-lucas:hover {
+	transform: scale(1.1);
 }
 
 .desc {
