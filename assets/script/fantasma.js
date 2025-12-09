@@ -102,4 +102,3 @@ async function criarCards() {
 // executa assim que a pagina carregar
 criarCards();
 
-
