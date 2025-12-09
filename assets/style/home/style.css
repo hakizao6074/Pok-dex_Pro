@@ -339,6 +339,7 @@ section {
 	width: 50%;
 }
 
+
 .block-2-blue {
 	width: 90%;
 	height: 100%;
@@ -406,6 +407,7 @@ section {
 	text-align: center;
 } 
 
+
 @media screen and (max-width: 768px) {
 
 	header {
@@ -438,6 +440,7 @@ section {
 		width: 78%;
 		text-align: center;
 		gap: 30px;
+
 		font-size: 12px;
 
 		h1 {
