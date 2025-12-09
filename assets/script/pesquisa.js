@@ -63,33 +63,97 @@ async function criarCards() {
 		const card2 = document.createElement("div");
 		card2.classList.add("card2"); // cria um segundo card
 
-		// pegando as informaçoes do pokemon na API
-		const hp = data.stats.find(s => s.stat.name === "hp").base_stat;
-		const attack = data.stats.find(s => s.stat.name === "attack").base_stat;
-		const defense = data.stats.find(s => s.stat.name === "defense").base_stat;
-		const height = data.height / 10;
-		const weight = data.weight / 10;
+				// pega as infos da API
+				const height = data.height / 10;
+				const weight = data.weight / 10;
+				const name = data.name;
+				const imgUrl =
+					data.sprites.other["official-artwork"].front_default ||
+					data.sprites.front_default;
+				const abilities = data.abilities
+					.map((a) => a.ability.name)
+					.slice(0, 2)
+					.join(", ");
 
-		card2.innerHTML = `
+				// Stats
+				const stats = {};
+				data.stats.forEach((s) => (stats[s.stat.name] = s.base_stat));
+				const atk = stats["attack"] || 0;
+				const def = stats["defense"] || 0;	
+				const hp = stats["hp"] || 0;	
+
+
+				card2.innerHTML = `
 				<br>
-				<h4>#${data.id}</h4>
-				<img src="${data.sprites.front_default}">
-				<h3>${data.name}</h3>
+					<div class="card2-header">
+					<h4>#${data.id}</h4>
+					<img src="${imgUrl}" class="pokemon-image">
+					<h3>${name}</h3>
+				</div>
 				<br>
-				<p><strong>Height:</strong> ${height}m</p>
-				<p><strong>weight:</strong> ${weight}kg</p>
-				<p><strong>Hp:</strong> ${hp}</p>
-				<p><strong>Attack:</strong> ${attack}</p>
-				<p><strong>Defense:</strong> ${defense}</p>
-				<p><strong>Type:</strong></p>
-				<ul>
-					<li>${data.types[0].type.name}</li>
-					<li>${data.types[1] ? data.types[1].type.name : ""}</li>
-				</ul>
-				<br>
-				<button id="back"><</button>
-				<br>
-				<br>
+				<div class="line-separator">
+					<div class="line">
+						<div class="height">
+							<h4><strong>Height:</strong></h4>
+							<p>${height}m</p>
+						</div>
+						<div class="weight">
+							<h4><strong>Weight:</strong></h4>
+							<p>${weight}kg</p>
+						</div>
+					</div>
+					<br>
+					<div class="line2">
+						<div class="hp">
+							<span class="stat-value">HP</span>
+							<span class="stat-value">${hp}</span>
+							<div class="progress-bg">
+								<div class="progress-fill" style="width: ${Math.min(
+									hp / 2,
+										100
+									)}%; background-color: var(--stat-color-red-hp);">
+								</div>
+							</div>
+						</div>
+						<div class="attack">
+						<span class="stat-value">ATK</span>
+							<span class="stat-value">${atk}</span>
+							<div class="progress-bg">
+								<div class="progress-fill" style="width: ${Math.min(
+									atk / 2,
+										100
+									)}%; background-color: var(--stat-color-yellow-attack);">
+								</div>
+								</div>
+						</div>
+						<div class="defense">
+							<span class="stat-label">DEF</span>
+							<span class="stat-value">${def}</span>
+							<div class="progress-bg">
+							<div class="progress-fill" style="width: ${Math.min(
+								def / 2,
+								100
+							)}%; background-color: var(--stat-color-green-defense);">
+							</div>
+							</div>
+							</div>
+							</div>
+							<br>
+							<div class="line3">
+							<p><strong>Abilities:</strong></p>
+							<p>${abilities}</p>
+							</div>
+							<br>
+							<p><strong>Type:</strong></p>
+							<ul>
+							<li>${data.types[0].type.name}</li>
+							<li>${data.types[1] ? data.types[1].type.name : ""}</li>
+							</ul>
+							<br>
+							<button id="back"><</button>
+						</div>
+						<br>
+						<br>
 			      `; // infos do card2
 
 		function color(data) {
