@@ -7,9 +7,9 @@ async function criarCards() {
 
 
 		const resp = await fetch(`https://pokeapi.co/api/v2/type/steel`);
-		const data = await resp.json(); // pega as info dos pokemons tipo "aço"
+		const det = await resp.json(); // pega as info dos pokemons tipo "aço"
 
-		const lista = data.pokemon.slice(0, 20); // a quantidade de pokemons q vai aparecer, no caso 30
+		const lista = det.pokemon.slice(0, 20); // a quantidade de pokemons q vai aparecer, no caso 30
 
 		const area = document.createElement("div"); // cria uma div com class=grupo-tipo
 		area.classList.add("grupo-tipo");
@@ -59,33 +59,96 @@ async function criarCards() {
 				card2.classList.add("card2");
 
 				// pega as infos da API
-				const hp = det.stats.find(s => s.stat.name === "hp").base_stat;
-				const attack = det.stats.find(s => s.stat.name === "attack").base_stat;
-				const defense = det.stats.find(s => s.stat.name === "defense").base_stat;
 				const height = det.height / 10;
 				const weight = det.weight / 10;
+				const name = det.name;
+				const imgUrl =
+					det.sprites.other["official-artwork"].front_default ||
+					det.sprites.front_default;
+				const abilities = det.abilities
+					.map((a) => a.ability.name)
+					.slice(0, 2)
+					.join(", ");
+
+				// Stats
+				const stats = {};
+				det.stats.forEach((s) => (stats[s.stat.name] = s.base_stat));
+				const atk = stats["attack"] || 0;
+				const def = stats["defense"] || 0;	
+				const hp = stats["hp"] || 0;	
 
 
 				card2.innerHTML = `
 				<br>
-				<h4>#${det.id}</h4>
-				<img src="${det.sprites.front_default}">
-				<h3>${det.name}</h3>
+					<div class="card2-header">
+					<h4>#${det.id}</h4>
+					<img src="${imgUrl}" class="pokemon-image">
+					<h3>${name}</h3>
+				</div>
 				<br>
-				<p><strong>Height:</strong> ${height}m</p>
-				<p><strong>weight:</strong> ${weight}kg</p>
-				<p><strong>Hp:</strong> ${hp}</p>
-				<p><strong>Attack:</strong> ${attack}</p>
-				<p><strong>Defense:</strong> ${defense}</p>
-				<p><strong>Type:</strong></p>
-				<ul>
-					<li>${det.types[0].type.name}</li>
-					<li>${det.types[1] ? det.types[1].type.name : ""}</li>
-				</ul>
-				<br>
-				<button id="back"><</button>
-				<br>
-				<br>
+				<div class="line-separator">
+					<div class="line">
+						<div class="height">
+							<h4><strong>Height:</strong></h4>
+							<p>${height}m</p>
+						</div>
+						<div class="weight">
+							<h4><strong>Weight:</strong></h4>
+							<p>${weight}kg</p>
+						</div>
+					</div>
+					<br>
+					<div class="line2">
+						<div class="hp">
+							<span class="stat-value">HP</span>
+							<span class="stat-value">${hp}</span>
+							<div class="progress-bg">
+								<div class="progress-fill" style="width: ${Math.min(
+									hp / 2,
+										100
+									)}%; background-color: var(--stat-color-red-hp);">
+								</div>
+							</div>
+						</div>
+						<div class="attack">
+						<span class="stat-value">ATK</span>
+							<span class="stat-value">${atk}</span>
+							<div class="progress-bg">
+								<div class="progress-fill" style="width: ${Math.min(
+									atk / 2,
+										100
+									)}%; background-color: var(--stat-color-yellow-attack);">
+								</div>
+								</div>
+						</div>
+						<div class="defense">
+							<span class="stat-label">DEF</span>
+							<span class="stat-value">${def}</span>
+							<div class="progress-bg">
+							<div class="progress-fill" style="width: ${Math.min(
+								def / 2,
+								100
+							)}%; background-color: var(--stat-color-green-defense);">
+							</div>
+							</div>
+							</div>
+							</div>
+							<br>
+							<div class="line3">
+							<p><strong>Abilities:</strong></p>
+							<p>${abilities}</p>
+							</div>
+							<br>
+							<p><strong>Type:</strong></p>
+							<ul>
+							<li>${det.types[0].type.name}</li>
+							<li>${det.types[1] ? det.types[1].type.name : ""}</li>
+							</ul>
+							<br>
+							<button id="back"><</button>
+						</div>
+						<br>
+						<br>
 			      `; // infos do card2
 
 				function color(det) {
@@ -127,5 +190,3 @@ async function criarCards() {
 
 // executa assim que a pagina carregar
 criarCards();
-
-
