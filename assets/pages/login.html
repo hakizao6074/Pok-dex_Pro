@@ -7,6 +7,77 @@
     <title>login</title>
 </head>
 <body>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login - Estilo Pokémon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style/login.css">
+
+</head>
+<body>
+  <div class="card" role="main">
+    <div class="card__header">
+      <div class="pokeball" aria-hidden="true"></div>
+      <div>
+        <div class="card__title">Login</div>
+        <div class="card__subtitle">Capture your account — and start your journey</div>
+      </div>
+    </div>
+
+    <div class="card__body">
+      <form id="loginForm" autocomplete="on">
+        <div class="field">
+          <label for="username">Trainer</label>
+          <input id="username" name="username" type="text" placeholder="name" required maxlength="30">
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="ash@paleta.com" required>
+        </div>
+
+        <div class="field" style="display:flex;align-items:center;gap:10px">
+          <div style="flex:1">
+            <label for="password">Senha</label>
+            <input id="password" name="password" type="password" placeholder="••••••••" required minlength="6">
+          </div>
+          <button type="button" id="togglePass" class="btn btn--outline" aria-label="Mostrar senha" style="padding:10px 12px;font-size:12px">Mostrar</button>
+        </div>
+
+        <div class="row" style="margin-top:6px">
+          <button class="btn btn--primary" type="submit" style="flex:1">Entrar</button>
+          <button class="btn btn--outline" type="button" style="flex:1">Cadastrar</button>
+        </div>
+
+        <div class="helper">Esqueceu a senha? Peça ajuda a um center nurse.</div>
+      </form>
+    </div>
+
+    <div class="floating-ball" aria-hidden="true"></div>
+  </div>
+
+  <script>
+    // Toggle password visibility
+    const toggle = document.getElementById('togglePass');
+    const pwd = document.getElementById('password');
+    toggle.addEventListener('click', ()=>{
+      if(pwd.type === 'password'){ pwd.type = 'text'; toggle.textContent = 'Ocultar'; toggle.setAttribute('aria-pressed','true'); }
+      else { pwd.type = 'password'; toggle.textContent = 'Mostrar'; toggle.setAttribute('aria-pressed','false'); }
+    });
+
+    // Fake submit (demo) — remove / replace with your own auth
+    document.getElementById('loginForm').addEventListener('submit', (e)=>{
+      e.preventDefault();
+      alert('Bem-vindo, ' + document.getElementById('username').value + '! (demo)');
+    });
+  </script>
+</body>
+</html>
     
 </body>
 </html>
