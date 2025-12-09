@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Seu CSS externo -->
+  <link rel="stylesheet" href="../style/cadastro.css">
+</head>
+
+<body>
+
+  <div class="card" role="main">
+    <div class="card__header">
+      <div class="pokeball"></div>
+      <div>
+        <div class="card__title">Conecte-se</div>
+        <div class="card__subtitle">Crie sua conta e comece sua jornada.</div>
+      </div>
+    </div>
+
+    <div class="card__body">
+
+      <!-- LOGIN -->
+      <form id="loginForm" autocomplete="on">
+
+        <div class="field">
+          <label for="username">Treinador</label>
+          <input id="username" type="text" placeholder="" required maxlength="30">
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="" required>
+        </div>
+
+        <div class="field" style="display:flex;align-items:center;gap:10px">
+          <div style="flex:1">
+            <label for="password">Senha</label>
+            <input id="password" type="password" placeholder="••••••••" required minlength="6">
+          </div>
+          <button type="button" id="togglePass" class="btn btn--outline">
+            Mostrar
+          </button>
+        </div>
+
+        <div class="row">
+          <button class="btn btn--primary" type="submit">Entrar</button>
+          <button class="btn btn--outline" type="button" id="goRegister">Cadastrar</button>
+        </div>
+
+      </form>
+
+      <!-- CADASTRO -->
+      <form id="registerForm" style="display:none">
+
+        <div class="field">
+          <label for="regName">Nome do Treinador</label>
+          <input id="regName" type="text" required>
+        </div>
+
+        <div class="field">
+          <label for="regEmail">Email</label>
+          <input id="regEmail" type="email" required>
+        </div>
+
+        <div class="field">
+          <label for="regPassword">Senha</label>
+          <input id="regPassword" type="password" minlength="6" required>
+        </div>
+
+        <div class="field">
+          <label for="regConfirm">Confirmar Senha</label>
+          <input id="regConfirm" type="password" minlength="6" required>
+        </div>
+
+        <div class="row">
+          <button class="btn btn--primary" type="submit">Criar Conta</button>
+          <button class="btn btn--outline" type="button" id="backLogin">Voltar</button>
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script>
+
+    const loginForm = document.getElementById("loginForm");
+    const registerForm = document.getElementById("registerForm");
+    const goRegister = document.getElementById("goRegister");
+    const backLogin = document.getElementById("backLogin");
+
+    goRegister.onclick = () => {
+      loginForm.style.display = "none";
+      registerForm.style.display = "block";
+    };
+
+    backLogin.onclick = () => {
+      registerForm.style.display = "none";
+      loginForm.style.display = "block";
+    };
+
+    // Mostrar/ocultar senha
+    const toggle = document.getElementById("togglePass");
+    const pwd = document.getElementById("password");
+
+    toggle.onclick = () => {
+      if (pwd.type === "password") {
+        pwd.type = "text";
+        toggle.textContent = "Ocultar";
+      } else {
+        pwd.type = "password";
+        toggle.textContent = "Mostrar";
+      }
+    };
+
+    // Cadastro
+    registerForm.onsubmit = (e) => {
+      e.preventDefault();
+
+      const name = regName.value;
+      const email = regEmail.value;
+      const pass = regPassword.value;
+      const confirm = regConfirm.value;
+
+      if (pass !== confirm) {
+        alert("As senhas não coincidem!");
+        return;
+      }
+
+      localStorage.setItem("pokemonUser", JSON.stringify({
+        name,
+        email,
+        password: pass
+      }));
+
+      alert("Treinador cadastrado com sucesso!");
+
+      registerForm.reset();
+      registerForm.style.display = "none";
+      loginForm.style.display = "block";
+    };
+
+    // Login
+    loginForm.onsubmit = (e) => {
+      e.preventDefault();
+
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const username = document.getElementById("username").value;
+
+      const savedUser = JSON.parse(localStorage.getItem("pokemonUser"));
+
+      if (!savedUser) {
+        alert("Nenhum treinador cadastrado!");
+        return;
+      }
+
+      if (email === savedUser.email && password === savedUser.password) {
+        alert("Bem-vindo, " + username + "! Login realizado com sucesso!");
+      } else {
+        alert("Email ou senha incorretos!");
+      }
+    };
+
+  </script>
+
+</body>
+</html>
