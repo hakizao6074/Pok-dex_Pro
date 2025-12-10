@@ -8,12 +8,13 @@
 
 body {
 	font-family: "Roboto Condensed", sans-serif;
-	background-color: var(--background-color);
-	height: 89vh;
+	background: var(--background-fade-aco);
+	background-attachment: fixed;
 }
 
 /*header*/
 header {
+	background-color: var(--background-color);
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -134,12 +135,15 @@ input:checked + .slider:before {
 
 /* main */
 main {
+	min-height: auto;
+}
+
+.main {
 	padding: 25px;
-	background: var(--background-fade-aco);
 	height: 100%;
 }
 
-main .api {
+.main .api {
 	border: 2px solid var(--main-border-color);
 	border-radius: 13px;
 	background-color: var(--card-background-color);

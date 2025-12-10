@@ -8,12 +8,13 @@
 
 body {
 	font-family: "Roboto Condensed", sans-serif;
-	background-color: var(--background-color);
-	height: 89vh;
+	background: var(--background-fade-dragao);
+	background-attachment: fixed;
 }
 
 /*header*/
 header {
+	background-color: var(--background-color);
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -134,12 +135,15 @@ input:checked + .slider:before {
 
 /* main */
 main {
+	min-height: auto;
+}
+
+.main {
 	padding: 25px;
-	background: var(--background-fade-dragao);
 	height: 100%;
 }
 
-main .api {
+.main .api {
 	border: 2px solid var(--main-border-color);
 	border-radius: 13px;
 	background-color: var(--card-background-color);
@@ -446,7 +450,7 @@ input[type="range"] {
 		overflow-x: auto;
 	}
 
-	.center nav a:nth-child(5) h2 {
+	.center nav a:nth-child(4) h2 {
 		box-shadow: none;
 		color: var(--barra-selecao);
 	}
@@ -455,7 +459,7 @@ input[type="range"] {
 	.center nav a:nth-child(1) h2:hover,
 	.center nav a:nth-child(2) h2:hover,
 	.center nav a:nth-child(3) h2:hover,
-	.center nav a:nth-child(4) h2:hover {
+	.center nav a:nth-child(5) h2:hover {
 		box-shadow: none;
 		color: var(--barra-selecao);
 	}
