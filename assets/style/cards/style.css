@@ -189,7 +189,7 @@ main {
     margin-top: 10px;
 }
 
-.Perfil:hover {
+.Perfil {
     background-image: url("../../imgs/Cards-imgs/dementador.png");
 }
 
@@ -318,18 +318,18 @@ main {
 	}
 }
 
-#lucas:hover {
+#lucas {
     background-image: url("../../imgs/Cards-imgs/lukes.webp");
 }
 
-#miguel:hover {
+#miguel {
     background-image: url("../../imgs/Cards-imgs/miguel.webp");
 }
 
-#teteu:hover {
+#teteu {
     background-image: url("../../imgs/Cards-imgs/teteu.webp");
 }
 
-#davi:hover {
+#davi {
     background-image: url("../../imgs/Cards-imgs/davi.webp");
 }
