@@ -7,7 +7,7 @@ async function criarCards() {
 
 
 		const resp = await fetch(`https://pokeapi.co/api/v2/type/ghost`);
-		const data = await resp.json(); // pega as info dos pokemons tipo "aço"
+		const data = await resp.json(); // pega as info dos pokemons tipo "fantasma"
 
 		const lista = data.pokemon.slice(0, 20); // a quantidade de pokemons q vai aparecer, no caso 30
 
