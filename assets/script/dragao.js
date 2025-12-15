@@ -9,7 +9,7 @@ async function criarCards() {
 		const resp = await fetch(`https://pokeapi.co/api/v2/type/dragon`);
 		const det = await resp.json(); // pega as info dos pokemons tipo "aço"
 
-		const lista = det.pokemon.slice(0, 20); // a quantidade de pokemons q vai aparecer, no caso 30
+		const lista = det.pokemon.slice(0, 20); // a quantidade de pokemons q vai aparecer, no caso 20
 
 		const area = document.createElement("div"); // cria uma div com class=grupo-tipo
 		area.classList.add("grupo-tipo");
@@ -183,7 +183,7 @@ async function criarCards() {
 			}); // in cada card criar um evento de click
 
 			area.appendChild(card); // dentro da "grupo-tipo" criar os cards
-		} // vai criar a quantidade de cards q vc colocou, no caso 30
+		} // vai criar a quantidade de cards q vc colocou, no caso 20
 
 		container.appendChild(area); // dentro da div container criar a "grupo-tipo"
 	}
