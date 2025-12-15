@@ -34,6 +34,17 @@ header {
 	
 }
 
+.left a img:hover {
+	transform: scale(1.12);
+	filter: brightness(1.2);
+}
+
+.left a img {
+	width: 200px;
+	height: 100px;
+	transition: 0.3s ease;
+}
+
 .center nav a h1 {
 	color: var(--text-color);
 	font-size: x-large;
@@ -184,10 +195,10 @@ main {
 }
 
 .Container-1{
-	width: 95%;
+	width: 75%;
 	display: flex;
 	justify-content: space-between;
-	height: 200px;
+	height: 10%;
 
 }
 .Perfil {
@@ -285,11 +296,6 @@ main {
 	flex-direction: column;
 }
 
-.block-blue {
-	width: 80%;
-	height: 5px;
-	background-color: rgb(0, 255, 255);
-}
 
 footer {
 	border-top: solid 1px rgb(0, 255, 255);
@@ -297,12 +303,67 @@ footer {
 	height: 100px;
 }
 
+
+section {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.mom {
+	width: 70%;
+	height: 200px;
+	background-color: black;
+	border-radius: 25px;
+	border: solid 3px rgb(255, 238, 0);
+	color: rgb(255, 255, 255);
+	display: flex;
+	align-items: center;
+	font-style: italic;
+	font-size: 25px;
+	gap: 10px;
+	padding: 40px;
+	font-weight: 200;
+	justify-content: space-between;
+	transition: transform 0.3s ease;
+
+	.func {
+		font-size: 35px;
+		font-style: normal;
+		font-weight: 100;
+	}
+}
+
+.mom:hover {
+	transform: scale(1.1);
+}
+
+.img-picachu {
+	display: flex;
+	align-items: center;
+	justify-content:right;
+	width: 50%;
+}
+
+
+
+
 @media screen and (max-width: 768px) {
 
 	header {
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		flex-direction: column;
 	}
 
+	nav {
+		align-items: center;
+		justify-content: center;
+		display: flex;
+		flex-direction: column;
+	}
 	main {
 		flex-direction: column;
 		gap: 30px;
@@ -313,23 +374,41 @@ footer {
 	.Container-all {
 		flex-direction: column;
 		gap: 30px;
-		height: 100%;
+		height: 10%;
 	}
 
 	.News {
-		width: 98%;
+		width: 78%;
 		text-align: center;
 		gap: 30px;
-		padding: 20px;
+		flex-direction: column;
+		gap: 3px;
+
 		font-size: 12px;
 
 		h1 {
 			font-size: 37px;
 		}
+
+		.img-news {
+			width: 100%;
+		}
+
+		img {
+			width: 50%;
+		}
+	}
+
+	.text-news {
+		height: 30%;
+	}
+
+	.Container-1 {
+		height: 10%;
 	}
 
 	.sub-news {
-		width: 70%;
+		width: 100%;
 		gap: 30px;
 		padding: 20px;
 		margin: 20px;
@@ -344,4 +423,77 @@ footer {
 	.Titulo-DLCs {
 		font-size: 5px;
 	}
+
+	.mom {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		width: 70%;
+		height: 40%;
+		font-size: 10px;
+		text-align: center;
+		img {
+			height: 100%;
+			width: 100%;
+		}
+
+		p {
+			font-size: 15px;
+		}
+
+		.func {
+			width: 100%;
+			font-size: 25px;
+		}
+	}
+
+	.Conteudo-1{
+		font-size: 7px;
+	}
+
+	.img-picachu {
+		align-items: center;
+		justify-content: center;
+	}
+
+	.button-equipe {
+		width: 20%;
+		height: 50%;
+	}
 }
+
+	.Music {
+		background-image: url('../../imgs/icones/pokeball_743977.png');
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: 30px;
+		width: 30px;
+		border-radius: 100%;
+		transition: transform 0.3s ease;
+		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+	}
+
+	.Music:hover {
+		transform: scale(1.1);
+		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.577);
+	}
+
+	.button-equipe {
+		width: 100%;
+		height: 50%;
+		border-radius: 30px;
+		background-color: black;
+		border: solid 2px #ebe721;
+		color: #ffffff;
+		transition: 1.5ms all;
+	}
+
+	.func {
+		height: 100%;
+	}
+
+	.button-equipe:hover {
+		transform: scale(1.1);
+		border: solid 2px #08e0d6;
+	}
